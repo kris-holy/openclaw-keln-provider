@@ -58,7 +58,7 @@ Prices are on [Models & pricing](https://docs.keln.ai/models-pricing/).
 
 ## Compatibility
 
-Requires OpenClaw `>=2026.11.1`.
+Requires OpenClaw `>=2026.11.1`, which runs on Node 24.16 or newer.
 
 ## License
 
