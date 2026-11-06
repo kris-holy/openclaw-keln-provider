@@ -1,0 +1,110 @@
+{
+  "id": "keln",
+  "name": "Keln",
+  "description": "Keln model provider: open models through an OpenAI-compatible API.",
+  "version": "1.0.0",
+  "categories": ["models"],
+  "activation": {
+    "onStartup": false
+  },
+  "providers": ["keln"],
+  "providerEndpoints": [
+    {
+      "endpointClass": "keln-native",
+      "hosts": ["api.keln.ai"]
+    }
+  ],
+  "modelCatalog": {
+    "providers": {
+      "keln": {
+        "baseUrl": "https://api.keln.ai/v1",
+        "api": "openai-completions",
+        "defaultModel": "zai-org/glm-5.3",
+        "models": [
+          {
+            "id": "zai-org/glm-5.3",
+            "name": "GLM 5.3",
+            "input": ["text"],
+            "reasoning": true,
+            "contextWindow": 1048576,
+            "maxTokens": 32768,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": { "supportsUsageInStreaming": true }
+          },
+          {
+            "id": "zai-org/glm-5.3-flash",
+            "name": "GLM 5.3 Flash",
+            "input": ["text", "image"],
+            "reasoning": true,
+            "contextWindow": 1048576,
+            "maxTokens": 32768,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": { "supportsUsageInStreaming": true }
+          },
+          {
+            "id": "moonshotai/kimi-k3",
+            "name": "Kimi K3",
+            "input": ["text", "image"],
+            "reasoning": true,
+            "contextWindow": 1048576,
+            "maxTokens": 32768,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": { "supportsUsageInStreaming": true }
+          },
+          {
+            "id": "qwen/qwen3.8-2.4t-a95b",
+            "name": "Qwen3.8 Max",
+            "input": ["text"],
+            "reasoning": true,
+            "contextWindow": 1010000,
+            "maxTokens": 32768,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": { "supportsUsageInStreaming": true }
+          },
+          {
+            "id": "deepseek-ai/deepseek-v4.1-flash",
+            "name": "DeepSeek V4 Flash",
+            "input": ["text", "image"],
+            "reasoning": true,
+            "contextWindow": 1048576,
+            "maxTokens": 32768,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": { "supportsUsageInStreaming": true }
+          }
+        ]
+      }
+    },
+    "discovery": {
+      "keln": "refreshable"
+    }
+  },
+  "setup": {
+    "providers": [
+      {
+        "id": "keln",
+        "envVars": ["KELN_API_KEY"]
+      }
+    ]
+  },
+  "providerAuthChoices": [
+    {
+      "provider": "keln",
+      "method": "api-key",
+      "choiceId": "keln-api-key",
+      "appGuidedSecret": true,
+      "choiceLabel": "Keln API key",
+      "groupId": "keln",
+      "groupLabel": "Keln",
+      "groupHint": "Open models through an OpenAI-compatible API",
+      "optionKey": "kelnApiKey",
+      "cliFlag": "--keln-api-key",
+      "cliOption": "--keln-api-key <key>",
+      "cliDescription": "Keln API key"
+    }
+  ],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}
