@@ -1,5 +1,5 @@
 {
-  "name": "@kris-holy/openclaw-keln-provider",
+  "name": "@keln/openclaw-keln-provider",
   "version": "1.0.0",
   "description": "Keln as an OpenClaw model provider, with open models through an OpenAI-compatible API.",
   "license": "MIT",

@@ -9,8 +9,10 @@ plugin. It is not affiliated with OpenClaw.
 ## Install
 
 ```sh
-openclaw plugins install clawhub:@kris-holy/openclaw-keln-provider
+openclaw plugins install clawhub:@keln/openclaw-keln-provider --accept-capabilities
 ```
+
+The flag lets the plugin add Keln as a model provider.
 
 ## Configure
 
